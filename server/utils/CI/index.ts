@@ -210,7 +210,8 @@ export class CI {
     if (ciConfigure[miniprogramType].storeDownloadPath.includes('github')) {
       storePath = `${ciConfigure[miniprogramType].storeDownloadPath}#${branch}`
     } else {
-      storePath = `direct:${ciConfigure[miniprogramType].storeDownloadPath}?private_token=${ciConfigure[miniprogramType].privateToken}&ref=${encodeURIComponent(branch)}&sha=${encodeURIComponent(branch)}`
+      // storePath = `direct:${ciConfigure[miniprogramType].storeDownloadPath}?private_token=${ciConfigure[miniprogramType].privateToken}&ref=${encodeURIComponent(branch)}&sha=${encodeURIComponent(branch)}`
+      storePath = ciConfigure[miniprogramType].storeDownloadPath
     }
     const projectPath = utils.fixedToRelativePath(`/miniprogram/${miniprogramType}/${version}`)
 
@@ -232,7 +233,6 @@ export class CI {
       })
     ])
   }
-
   // 构建
   async build (miniprogramType: string, projectPath: string, isPro: number): Promise<void> {
     await utils.execPromise(`npm install`, projectPath)
@@ -304,11 +304,24 @@ export class CI {
         })
         break
       }
+      case 'dependent': {
+        const secondTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
+        const firstTime = (task.journal[task.journal.length - 1]).time
+        task.journal.push({
+          message: '项目获取完毕，开始下载依赖',
+          time: secondTime,
+          interval: dayjs(secondTime).get('millisecond') - dayjs(firstTime).get('millisecond')
+        })
+        Object.assign(task, {
+          journal: JSON.stringify(task.journal),
+        })
+        break
+      }
       case 'second': {
         const secondTime = dayjs().format('YYYY-MM-DD HH:mm:ss')
         const firstTime = (task.journal[task.journal.length - 1]).time
         task.journal.push({
-          message: '项目获取完毕，开始进行编译',
+          message: '依赖下载完毕，开始进行编译',
           time: secondTime,
           interval: dayjs(secondTime).get('millisecond') - dayjs(firstTime).get('millisecond')
         })

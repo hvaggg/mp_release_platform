@@ -38,12 +38,12 @@ async function bootstrap(): Promise<void> {
   })
   app.use(cookieParser())
 
-  const redisStore = connectRedis(session)
+  // const redisStore = connectRedis(session)
   app.use(session({
     name: configure.session.secret,
-    store: new redisStore({ client: redis.createClient(Object.assign({}, configure.redisCFG, {
-      prefix: configure.redisCFG.prefix + 'sess:',
-    })) }),
+    // store: new redisStore({ client: redis.createClient(Object.assign({}, configure.redisCFG, {
+    //   prefix: configure.redisCFG.prefix + 'sess:',
+    // })) }),
     secret: configure.session.secret,
     cookie: configure.session.cookie,
     saveUninitialized: true,

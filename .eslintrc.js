@@ -72,6 +72,7 @@ module.exports = {
       css: 'never',
       vue: 'never',
     }],
+    'linebreak-style': ['error', 'windows']
   },
   settings: {
     'import/resolver': {

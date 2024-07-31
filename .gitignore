@@ -3,7 +3,7 @@
 
 # node
 node_modules
-
+destination
 # output
 /public/bundle
 /private/server

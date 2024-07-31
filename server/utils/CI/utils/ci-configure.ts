@@ -10,36 +10,39 @@ const ciConfigure = {
     // v3版本 gitlab地址: `${gitlab地址}/${用户名}/${代码仓库名}/repository/archive.zip`
     // v4版本 gitlab地址: `${gitlab地址}/api/v4/projects/${代码仓库id}/repository/archive`
     // tips: `${gitlab地址}/api/v3/projects`有返回值即为v3版本gitlab，`${gitlab地址}/api/v4/projects`有返回值即为v4版本gitlab，返回的数据中id字段就是代码仓库的id
-    storeDownloadPath: 'https://github.com:lizijie123/uni-mp-study',
+    storeDownloadPath: 'http://code.jms.com/yl/jms-mp-month-front.git',
     // gitlab项目，则需要设置gitlab的privateToken，在gitlab个人中心可以拿到
-    privateToken: '',
+    privateToken: 'nzrwpHUmEsaqfxBSLGvr',
     // 小程序打包构建命令
-    buildCommand: 'npm run build:wx',
+    buildCommand: 'npm run build:mp-weixin',
     // 开发环境小程序打包构建命令(当未配置该值时，默认值为buildCommand)
-    devBuildCommand: 'npm run build:wx -dev',
+    devBuildCommand: 'npm run build:mp-weixin',
     // 小程序打包构建完，输出目录与根目录的相对位置
-    buildProjectChildrenPath: '/dist/build/mp-weixin',
+    buildProjectChildrenPath: '/dist/dev/mp-weixin',
     // 微信小程序与支付宝小程序需要非对称加密的私钥，privateKeyPath是私钥文件相对根目录的地址，在微信公众平台中拿到
     privateKeyPath: '/server/utils/CI/private/lzj-wechat.key',
     setting: {
       es7: false,
-      minify: false,
+      minify: true,
+      minifyWXML: true,
+      minifyJS: true,
+      minifyWXSS: true,
       autoPrefixWXSS: false,
     },
   },
   lzj_alipay: {
     // 同上
-    appId: '2021002107681948',
+    appId: '2021003192636633',
     // 工具id，支付宝小程序设置了非对称加密的公钥后会生成
-    toolId: 'b6465befb0a24cbe9b9cf49b4e3b8893',
+    toolId: 'c486b647070a458b913d5c92cf990bbf',
     // 同上
-    storeDownloadPath: 'https://github.com:lizijie123/uni-mp-study',
+    storeDownloadPath: 'http://code.jms.com/yl/jms-mp-month-front.git',
     // gitlab项目，则需要设置gitlab的privateToken
-    privateToken: '',
+    privateToken: '111',
     // 同上
-    buildCommand: 'npm run build:ap',
+    buildCommand: 'npm run build:mp-alipay',
     // 同上
-    buildProjectChildrenPath: '/dist/build/mp-alipay',
+    buildProjectChildrenPath: '/dist/dev/mp-alipay',
     // 同上
     privateKeyPath: '/server/utils/CI/private/lzj-alipay.key',
   },
