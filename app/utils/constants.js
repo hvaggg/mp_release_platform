@@ -6,8 +6,8 @@ export const headerHeight = () => (!channel.isApplet() ? 46 : 0)
 
 // 小程序key value字典
 export const releaseMap = new Map([
-  ['lzj_wechat', '微信小程序'],
-  ['lzj_alipay', '支付宝小程序'],
+  ['wechat', '微信小程序'],
+  ['alipay', '支付宝小程序'],
 ])
 
 export default headerHeight

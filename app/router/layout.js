@@ -13,7 +13,7 @@ const layout = [
         name: 'lzj',
         meta: {
           role: 3,
-          title: 'lizj小程序',
+          title: '小程序',
           icon: 'icon-lzj-logo',
           keepAlive: true,
         },
@@ -24,7 +24,7 @@ const layout = [
             name: 'lzj-wechat',
             meta: {
               role: 3,
-              title: 'lizj微信小程序',
+              title: '微信小程序',
               icon: 'icon-wechat',
               keepAlive: true,
             },
@@ -35,7 +35,7 @@ const layout = [
             name: 'lzj-alipay',
             meta: {
               role: 3,
-              title: 'lizj支付宝小程序',
+              title: '支付宝小程序',
               icon: 'icon-alipay',
               keepAlive: true,
             },

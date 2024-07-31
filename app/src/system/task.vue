@@ -127,7 +127,7 @@ export default {
       // 小程序类型
       miniprogramTypes: [],
       // 选中的小程序类型
-      miniprogramType: 'lzj_wechat',
+      miniprogramType: 'wechat',
     }
   },
 
@@ -156,17 +156,17 @@ export default {
       const { infoMember } = this
       const miniprogramTypes = [
         {
-          label: 'lizj小程序',
+          label: '小程序',
           role: 0,
           options: [
             {
-              value: 'lzj_wechat',
-              label: 'lizj微信小程序',
+              value: 'wechat',
+              label: '微信小程序',
               disabled: false,
             },
             {
-              value: 'lzj_alipay',
-              label: 'lizj支付宝小程序',
+              value: 'alipay',
+              label: '支付宝小程序',
               disabled: false,
             },
           ],

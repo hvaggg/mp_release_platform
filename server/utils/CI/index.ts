@@ -43,7 +43,7 @@ export class CI {
         taskId,
         errorMessage: null,
       })
-      await this.download(storePath, projectPath)
+      await this.download(storePath, projectPath, branch)
       await this.recordTask('second', ciGateway, {
         taskId,
         errorMessage: null,
@@ -98,7 +98,7 @@ export class CI {
         taskId,
         errorMessage: null,
       })
-      await this.download(storePath, projectPath)
+      await this.download(storePath, projectPath, branch)
       await this.recordTask('second', ciGateway, {
         taskId,
         errorMessage: null,
@@ -171,7 +171,7 @@ export class CI {
         taskId,
         errorMessage: null,
       })
-      await this.download(storePath, projectPath)
+      await this.download(storePath, projectPath, branch)
       await this.recordTask('second', ciGateway, {
         taskId,
         errorMessage: null,
@@ -222,10 +222,10 @@ export class CI {
   }
 
   // 获取代码
-  download (storePath: string, projectPath: string): Promise<unknown> {
+  download (storePath: string, projectPath: string, branch:string): Promise<unknown> {
     utils.initProjectPath(projectPath)
     return Promise.race([
-      utils.download(storePath, projectPath),
+      utils.download(storePath, projectPath, branch),
       new Promise((resolve, reject) => {
         setTimeout(() => {
           reject(new Error('拉取项目超时，时限为60分钟，请检查服务器网络'))

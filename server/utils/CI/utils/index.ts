@@ -44,7 +44,7 @@ export async function runNpmCommand(command: string, projectPath:string): Promis
  
 // 示例：执行npm install命令
 // 下载项目
-export function download (storePath: string, projectPath: string): Promise<void> {
+export function download (storePath: string, projectPath: string, branch: string): Promise<void> {
   return new Promise(async (resolve, reject) => {
     console.log(storePath, projectPath,'storePath, projectPath')
     // downloadGit(storePath, projectPath, null, err => {
@@ -60,7 +60,7 @@ export function download (storePath: string, projectPath: string): Promise<void>
 // git.clone('http://code.jms.com:jms-mp-month-front.git', projectPath) 
 // .then(() => console.log('Repository cloned!'))
 try {
-  await git.clone(storePath, projectPath,['--branch', 'masterNew']);
+  await git.clone(storePath, projectPath,['--branch', branch]);
   console.log("克隆完成");
   exec(`npm install --legacy-peer-deps`, { cwd: projectPath }, (error, stdout, stderr) => {
     if (error) {

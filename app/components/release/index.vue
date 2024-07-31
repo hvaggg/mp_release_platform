@@ -726,7 +726,7 @@ export default {
   margin: 0 auto;
 }
 
-.lzj_wechat {
+.wechat {
   @extend .qr;
 
   background-image: url('@assets/images/qr/lzj-wechat.jpg');

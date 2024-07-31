@@ -1,6 +1,6 @@
 const ciConfigure = {
   maxTimeout: 1000 * 60 * 60,
-  lzj_wechat: {
+  wechat: {
     // 小程序appID
     appId: 'wxe10f1d56da44430f',
     // 应用类型 miniProgram/miniProgramPlugin/miniGame/miniGamePlugin
@@ -20,7 +20,7 @@ const ciConfigure = {
     // 小程序打包构建完，输出目录与根目录的相对位置
     buildProjectChildrenPath: '/dist/dev/mp-weixin',
     // 微信小程序与支付宝小程序需要非对称加密的私钥，privateKeyPath是私钥文件相对根目录的地址，在微信公众平台中拿到
-    privateKeyPath: '/server/utils/CI/private/lzj-wechat.key',
+    privateKeyPath: '/server/utils/CI/private/wechat.key',
     setting: {
       es7: false,
       minify: true,
@@ -30,7 +30,7 @@ const ciConfigure = {
       autoPrefixWXSS: false,
     },
   },
-  lzj_alipay: {
+  alipay: {
     // 同上
     appId: '2021003192636633',
     // 工具id，支付宝小程序设置了非对称加密的公钥后会生成
@@ -44,9 +44,9 @@ const ciConfigure = {
     // 同上
     buildProjectChildrenPath: '/dist/dev/mp-alipay',
     // 同上
-    privateKeyPath: '/server/utils/CI/private/lzj-alipay.key',
+    privateKeyPath: '/server/utils/CI/private/alipay.key',
   },
-  lzj_toutiao: {
+  toutiao: {
     // 字节跳动小程序账号
     account: '',
     // 字节跳动小程序密码
