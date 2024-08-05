@@ -2,7 +2,7 @@ const ciConfigure = {
   maxTimeout: 1000 * 60 * 60,
   wechat: {
     // 小程序appID
-    appId: 'wxe10f1d56da44430f',
+    appId: 'wx57679a99c99c8ea9',
     // 应用类型 miniProgram/miniProgramPlugin/miniGame/miniGamePlugin
     type: 'miniProgram',
     // 项目下载地址
@@ -48,9 +48,9 @@ const ciConfigure = {
   },
   toutiao: {
     // 字节跳动小程序账号
-    account: '',
+    account: '18752021112',
     // 字节跳动小程序密码
-    password: '',
+    password: 'Aa123456',
     // 同上
     storeDownloadPath: 'https://github.com:lizijie123/uni-mp-study',
     // 同上
